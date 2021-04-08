@@ -18,10 +18,13 @@ In addition, using LESRCNN's Information Refinement Block (IRB), the coarse high
 Less Multi-Adds and better performance than Split Version
 
 ## Differences from existing RDCAB-RecursvieSRNet
-1) The input image is made at the same magnification as the output using the bicubic interpolation method, and the final reconstructed image and the elementwise sum are performed.
-2) After specifying the splitting ratio using the split operation of the information distillation mechanism, the features input to the block are divided into 16 as retain features and 48 as refine features, and the refine features are used to extract features continuously. Finally, the retain features extracted hierarchically are concated.
-3) A technique called Channel Attention has been widely used to make better use of useful information, and when a large number of filters are stacked, a large number of parameters follow, and when the number of parameters increases, an over-fitting problem occurs during learning, which prevents pooling. It has been mainly used to reduce the dimensionality by reducing the number of parameters used in the filter. In the case of global average pooling using this, it is a technique introduced as a method to eliminate the fully connected layer normally used in classifier by reducing the number of features more rapidly than conventional pooling, that is, making it a one-dimensional vector. Existing channel attention is more suitable for high level, that is, detection or classification, and the global average pooling used for channel attention uses global information, although it can increase the value of PSNR, it saves texture or edge when used for low level SR. It is said that it was confirmed that the structural similarity was rather low due to lack of information. Therefore, contrast aware channel attention was used to replace the existing global average pooling with the sum of the mean and variance by using a method of spreading the pixel distribution of an image called contrast over a wider area.
-4) With reference to AWSRN, the upsample process was configured with Adaptive Weight Multi Scale (AWMS), and it was confirmed that the use of AWMS structures of 3x3 Conv, 5x5 Conv, 7x7 Conv, and 9x9 Conv is not much different from using only 3x3 Conv. Therefore, 3x3 Conv and independent weights were used.
+1) The split operation of the existing IMDN is inefficient because distilled features (retains) and coarse features (refines) pass through the same 3x3 Conv and has limitations in Identity Mapping. Thus, the distilled features (retains) were separately extracted through 1x1 Conv, and the number of channels was adjusted at the same time. The coarse features were made to extract the features through 3x3 Conv, and additionally, identity mapping was made possible.
+
+  * Identity Mapping : Passing the input value as it is and using it
+
+2) If the feature is extracted from the LR patch and only one upsample is used, the high frequency feature lacking in detail is used for restoration. Therefore, referring to LESRCNN's Information Refinement Block (IRB), a step of creating detailed high-frequency features through Conv was added to make accurate SRs for high-frequency features that lack detail extracted through sub-pixels.
+
+
 
 
 ## Experiments
