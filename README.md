@@ -58,20 +58,20 @@ Less Multi-Adds and better performance than Split Version.
 
 |x4|Set5/ProcessTime|Set14/ProcessTime|BSD100/ProcessTime|Urban100/ProcessTime|
 |--|----------------|-----------------|------------------|--------------------|
-|RDN|32.47 / 0.157|28.81 / 0.192|27.72 / 0.021|26.61 / 0.227|
-|RDCAB-RecursiveSRNet|32.29 / 0.078|28.64 / 0.105|27.62 / 0.012|26.16 / 0.150|
-|Split Vesrion|32.24 / 0.057|28.65 / 0.083|27.62 / 0.016|26.08 / 0.107|
-|FD & IRB|32.28 / 0.106|28.66 / 0.104|27.64 / 0.007|26.19 / 0.141|
+|RDN|32.47 / 0.018|28.81 / 0.023|27.72 / 0.017|26.61 / 0.040|
+|RDCAB-RecursiveSRNet|32.29 / 0.012|28.64 / 0.016|27.62 / 0.013|26.16 / 0.021|
+|Split Vesrion|32.24 / 0.015|28.65 / 0.018|27.62 / 0.018|26.08 / 0.026|
+|FD & IRB|32.28 / 0.007|28.66 / 0.008|27.64 / 0.006|26.19 / 0.010|
 
-|-|RDN|RDCAB-RecursvieSRNet|Split Version|FD & IRB|
+|x4|RDN|RDCAB-RecursvieSRNet|Split Version|FD & IRB|
 |-|---|--------------------|-------------|--------|
 |Parameters|22M|2.1M|1.2M|1.63M|
 
-|-|RDN|RDCAB-RecursvieSRNet|Split Version|FD & IRB|
+|x4|RDN|RDCAB-RecursvieSRNet|Split Version|FD & IRB|
 |-|---|--------------------|-------------|--------|
 |Multi-Adds|1,309G|750G|567G|293G|
 
-* Compared to Split-Version, performance improved in all test sets and the number of parameters increased by 1.35 times, but Multi-Adds decreased by 1.9 times.
+* Compared to Split-Version, performance improved in all test sets and the number of parameters increased by 1.35 times, but Multi-Adds decreased by 1.9 times and process time was significantly faster.
 
 * The end goal is to keep performance as high as possible. It is to mount a network with high processing speed on the embedded board with the number of parameters less than 1M and Multi-Adds less than 100G.
 
