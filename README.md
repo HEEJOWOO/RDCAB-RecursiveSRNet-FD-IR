@@ -58,16 +58,18 @@ Less Multi-Adds and better performance than Split Version
 |RDN|32.47 / 0.157|28.81 / 0.192|27.72 / 0.021|26.61 / 0.227|
 |RDCAB-RecursiveSRNet|32.29 / 0.078|28.64 / 0.105|27.62 / 0.012|26.16 / 0.150|
 |Split Vesrion|32.24 / 0.057|28.65 / 0.083|27.62 / 0.016|26.08 / 0.107|
+|FD & IRB|32.28 / 0.106|28.66 / 0.104|27.64 / 0.007|26.19 / 0.141|
 
-|-|RDN|RDCAB-RecursvieSRNet|Split Version|
-|-|---|--------------------|-------------|
-|Parameters|22M|2.1M|1.2M|
+|-|RDN|RDCAB-RecursvieSRNet|Split Version|FD & IRB|
+|-|---|--------------------|-------------|--------|
+|Parameters|22M|2.1M|1.2M|1.63M|
 
-|-|RDN|RDCAB-RecursvieSRNet|Split Version|
-|-|---|--------------------|-------------|
-|Multi-Adds|1,309G|750G|567G|
+|-|RDN|RDCAB-RecursvieSRNet|Split Version|FD & IRB|
+|-|---|--------------------|-------------|--------|
+|Multi-Adds|1,309G|750G|567G|293G|
 
-* Compared with the existing RDCAB-RecursvieSRNet, the performance decreased by 0.05 in Set5 and 0.08 in Urban100, but overall processing time was faster, the number of parameters was 1.75 times, and Multi-adds was 1.3 times lighter.
+* Compared to Split-Version, performance improved in all test sets and the number of parameters increased by 1.35 times, but Multi-Adds decreased by 1.9 times.
+
 
 ## Reference
 [RDN](https://arxiv.org/abs/1802.08797)
@@ -79,3 +81,7 @@ Less Multi-Adds and better performance than Split Version
 [IMDN](https://arxiv.org/abs/1909.11856)
 
 [AWSRN](https://arxiv.org/abs/1904.02358)
+
+[RFDB](https://arxiv.org/abs/2009.11551)
+
+[LESRCNN](https://arxiv.org/abs/2007.04344)
