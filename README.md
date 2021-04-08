@@ -28,7 +28,7 @@ Less Multi-Adds and better performance than Split Version.
 
 
 ## Experiments
-* At this time, learning was conducted only at x4 magnification, and it will be studied at 2x and 3x magnifications in the future.
+* At this time, learning was conducted only at x4 magnification, and it will be studied at x2 and x3 magnifications in the future.
 
 * Check train.py for detailed network configuration.
 
