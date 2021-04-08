@@ -17,7 +17,7 @@ However, to use it in a low-power computer, it still has a lot of recursion and 
 In addition, using LESRCNN's Information Refinement Block (IRB), the coarse high-frequency feature, which is the output of the Upsample, was additionally learned to create better performance, and the recursion frequency and trade-off were found.
 Less Multi-Adds and better performance than Split Version.
 
-## Differences from existing RDCAB-RecursvieSRNet-
+## Differences from existing RDCAB-RecursvieSRNet-Split-Version
 1) The split operation of the existing IMDN is inefficient because distilled features (retains) and coarse features (refines) pass through the same 3x3 Conv and has limitations in Identity Mapping. Thus, the distilled features (retains) were separately extracted through 1x1 Conv, and the number of channels was adjusted at the same time. The coarse features were made to extract the features through 3x3 Conv, and additionally, identity mapping was made possible.
 
   * Identity Mapping : Passing the input value as it is and using it
