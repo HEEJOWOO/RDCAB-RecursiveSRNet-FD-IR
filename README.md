@@ -82,6 +82,6 @@ Less Multi-Adds and better performance than Split Version
 
 [AWSRN](https://arxiv.org/abs/1904.02358)
 
-[RFD](https://arxiv.org/abs/2009.11551)
+[RFDN](https://arxiv.org/abs/2009.11551)
 
 [LESRCNN](https://arxiv.org/abs/2007.04344)
