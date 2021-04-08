@@ -8,7 +8,7 @@
 
 [RDCAB-RecursvieSRNet-Split-Version](https://github.com/HEEJOWOO/RDCAB-RecursivSRNet-Split-Version-) 
 
-# RDCAB-RecursivSRNet(Feature Distillation & Refinement)
+# RDCAB-RecursivSRNet(Feature Distillation & Information Refinement)
 ## Abstract
 It aims to create a lightweight super-resolution network using RDN's Residual Dense Block (RDB) and DRRN's Recursive technique and mount it on an embedded board. RDB can create good performance by connecting not only the current features but also the previous features. However, if multiple RDBs are stacked, despite good performance, a large number of parameters and Multi-Adds follow.
 Therefore, we proposed RDCAB-RecursiveSRNet, which reduced the number of parameters based on a x4 magnification factor from 22M to 2.1M by about 10 times and Multi-Adds by about 1.7 times from 1,309G to 750G using a recursive method.
