@@ -173,7 +173,7 @@ if __name__ == '__main__':
     img_process_time = 0
     print("----------Set14 start----------")
     for i in range(1, 15):
-		if i<=9:
+	if i<=9:
             image_file="data/Set14/x{}/img_00{}_SRF_{}_HR.png".format(args.scale,i,args.scale)
         elif i>9 and i<=14:
             image_file="data/Set14/x{}/img_0{}_SRF_{}_HR.png".format(args.scale,i,args.scale)
