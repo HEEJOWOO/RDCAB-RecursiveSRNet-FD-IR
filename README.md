@@ -73,6 +73,8 @@ Less Multi-Adds and better performance than Split Version.
 
 * Compared to Split-Version, performance improved in all test sets and the number of parameters increased by 1.35 times, but Multi-Adds decreased by 1.9 times.
 
+* The end goal is to keep performance as high as possible. It is to mount a network with high processing speed on the embedded board with the number of parameters less than 1M and Multi-Adds less than 100G.
+
 
 ## Reference
 [RDN](https://arxiv.org/abs/1802.08797)
