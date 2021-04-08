@@ -11,11 +11,11 @@
 # RDCAB-RecursivSRNet(Feature Distillation & Refinement)
 ## Abstract
 It aims to create a lightweight super-resolution network using RDN's Residual Dense Block (RDB) and DRRN's Recursive technique and mount it on an embedded board. RDB can create good performance by connecting not only the current features but also the previous features. However, if multiple RDBs are stacked, despite good performance, a large number of parameters and Multi-Adds follow.
-Therefore, we proposed RDCAB-RecursiveSRNet, which reduced the number of parameters based on a 4x magnification factor from 22M to 2.1M by about 10 times and Multi-Adds by about 1.7 times from 1,309G to 750G using a recursive method.
+Therefore, we proposed RDCAB-RecursiveSRNet, which reduced the number of parameters based on a x4 magnification factor from 22M to 2.1M by about 10 times and Multi-Adds by about 1.7 times from 1,309G to 750G using a recursive method.
 However, since it still has a lot of Multi-Adds, it was judged that it was unreasonable to apply it to a real-time or low-power computer, and the Split Operation used in the Information Multi Distillation Network (IMDN) was applied to extract hierarchical features. The number was reduced to 1.2M Multi-Adds to 567G.
 However, to use it in a low-power computer, it still has a lot of recursion and has many Multi-Adds, so it needs to be lighter. Therefore, in the upgraded Residual Feature Distillation Network (RFDN) of the existing IMDN, the number of parameters was reduced by using the Residual Feature Distillation Block (RFDB), which works the same as the split operation of the existing IMDB, and improved performance.
 In addition, using LESRCNN's Information Refinement Block (IRB), the coarse high-frequency feature, which is the output of the Upsample, was additionally learned to create better performance, and the recursion frequency and trade-off were found.
-Less Multi-Adds and better performance than Split Version
+Less Multi-Adds and better performance than Split Version.
 
 ## Differences from existing RDCAB-RecursvieSRNet
 1) The split operation of the existing IMDN is inefficient because distilled features (retains) and coarse features (refines) pass through the same 3x3 Conv and has limitations in Identity Mapping. Thus, the distilled features (retains) were separately extracted through 1x1 Conv, and the number of channels was adjusted at the same time. The coarse features were made to extract the features through 3x3 Conv, and additionally, identity mapping was made possible.
