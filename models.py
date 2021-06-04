@@ -171,8 +171,6 @@ class DRRDB(nn.Module):
         sfe1 = self.sfe1(x)
         sfe2 = self.sfe2(sfe1)
         
-        local_global_features=[]
-        
         x= self.recursive_SR(sfe2)
         
         x = self.gff(concat_LF) + sfe1
