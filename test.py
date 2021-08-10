@@ -91,9 +91,6 @@ if __name__ == '__main__':
     lr = torch.from_numpy(lr).to(device)
     hr = torch.from_numpy(hr).to(device)
 
-    with torch.no_grad():
-        preds = model(lr).squeeze(0)
-
     if args.self_ensemble:
         with torch.no_grad():
 	    preds = x8_forward(lr,model).squeeze(0)
